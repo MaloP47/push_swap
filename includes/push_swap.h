@@ -6,7 +6,7 @@
 /*   By: mpeulet <mpeulet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 21:31:25 by mpeulet           #+#    #+#             */
-/*   Updated: 2023/08/14 12:35:03 by mpeulet          ###   ########.fr       */
+/*   Updated: 2023/08/15 09:45:36 by mpeulet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <stdlib.h>
 
 # include "messages.h"
-# include "defines.h"
 # include "libft.h"
 
 typedef struct s_pushswap

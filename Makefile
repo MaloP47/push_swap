@@ -6,7 +6,7 @@
 #    By: mpeulet <mpeulet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/20 15:19:55 by mpeulet           #+#    #+#              #
-#    Updated: 2023/08/14 12:35:46 by mpeulet          ###   ########.fr        #
+#    Updated: 2023/08/14 14:56:49 by mpeulet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,10 +34,10 @@ LIBFT			= $(LIBFT_DIR)$(LIBFT_NAME)
 
 #Variables
 
-BONUS			= my_checker
+BONUS			= checker
 NAME			= push_swap
 CC				= cc
-FLAGS			= -Wall -Werror -Wextra -g
+FLAGS			= -Wall -Werror -Wextra
 RM				= rm -rf
 TXT				= *txt
 VCF				= valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes
@@ -141,5 +141,3 @@ norm:
 					@echo "Norminet the cat says : $(RED)M$(ORANGE)e$(YELLOW)o$(GREEN)w$(CYAN) !$(BLUE)!$(MAGENTA)!$(DEF_COLOR)"
 
 .PHONY: all re clean fclean norm bonus test2 test3 test4 test5
-
-

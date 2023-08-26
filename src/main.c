@@ -6,7 +6,7 @@
 /*   By: mpeulet <mpeulet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 21:36:20 by mpeulet           #+#    #+#             */
-/*   Updated: 2023/08/14 12:36:53 by mpeulet          ###   ########.fr       */
+/*   Updated: 2023/08/26 21:48:48 by mpeulet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main(int ac, char **av)
 	int		error_type;
 	t_ps	ps;
 
-	init_ps(&ps);
+	ft_memset(&ps, 0, sizeof(t_ps));
 	error_type = error_management(&ps, ac, av);
 	if (error_type == 0 || error_type == 2)
 	{

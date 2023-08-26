@@ -6,7 +6,7 @@
 /*   By: mpeulet <mpeulet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 11:52:13 by mpeulet           #+#    #+#             */
-/*   Updated: 2023/08/15 09:47:55 by mpeulet          ###   ########.fr       */
+/*   Updated: 2023/08/26 22:43:58 by mpeulet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ int	main_sort(t_ps *ps)
 		another_simple(ps);
 	else
 	{
+		super_sort(ps);
 		copy_stack(ps);
 		radix_sort(ps);
 	}

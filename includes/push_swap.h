@@ -6,7 +6,7 @@
 /*   By: mpeulet <mpeulet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 21:31:25 by mpeulet           #+#    #+#             */
-/*   Updated: 2023/08/26 13:57:14 by mpeulet          ###   ########.fr       */
+/*   Updated: 2023/08/26 21:48:34 by mpeulet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,6 @@ typedef struct s_pushswap
 	int		*stack_copy;
 	int		*index;
 }		t_ps;
-
-/* *** atol_ps.c *** */
-
-long	atol_ps(const char *str);
 
 /* *** is_input_correct.c *** */
 
@@ -99,7 +95,7 @@ int		main_sort(t_ps *ps);
 
 /* *** utils.c *** */
 
-void	init_ps(t_ps *ps);
+long	atol_ps(const char *str);
 void	close_program(t_ps *push_swap);
 int		free_string(char *s, int return_code);
 int		find_max(t_ps *ps, int *stack, int size);

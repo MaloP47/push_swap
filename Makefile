@@ -6,7 +6,7 @@
 #    By: mpeulet <mpeulet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/20 15:19:55 by mpeulet           #+#    #+#              #
-#    Updated: 2023/08/26 13:57:16 by mpeulet          ###   ########.fr        #
+#    Updated: 2023/08/26 21:48:19 by mpeulet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,7 @@ INCLUDE			= 	-I ./includes/\
 
 OBJ_DIR_P 		= obj/
 SRC_DIR_P		= src/
-SRC_FUNCTIONS_P	= atol_ps is_input_correct movements move_stack_a move_stack_b \
+SRC_FUNCTIONS_P	= is_input_correct movements move_stack_a move_stack_b \
 					move_both_stacks parse_string radix_sort sort utils
 
 PUSH_SRC		= $(addprefix $(SRC_DIR_P), $(addsuffix .c, $(SRC_FUNCTIONS_P)))

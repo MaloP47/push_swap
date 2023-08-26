@@ -6,7 +6,7 @@
 /*   By: mpeulet <mpeulet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 11:32:34 by mpeulet           #+#    #+#             */
-/*   Updated: 2023/08/14 12:34:35 by mpeulet          ###   ########.fr       */
+/*   Updated: 2023/08/26 21:59:23 by mpeulet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,37 +85,6 @@ int	max_bits(t_ps *ps)
 		max++;
 	return (max);
 }
-
-/*void	sortfinal(t_ps *ps)
-{
-	int	i;
-	int	j;
-	int	size;
-	int	max;
-
-	i = 0;
-	size = ps->size_a;
-	max = maxbit(ps);
-	match(ps);
-	free(ps->stack_a);
-	ps->stack_a = ps->index;
-	while (i < max)
-	{
-		j = 0;
-		while (j < size)
-		{
-			if (((ps->stack_a[0] >> i) & 1) == 1)
-				rotate_a(ps, 1);
-			else
-				push_b(ps);
-			j++;
-		}
-		while (ps->size_b != 0)
-			push_a(ps);
-		i++;
-	}
-	return ;
-}*/
 
 void	radix_sort(t_ps *ps)
 {

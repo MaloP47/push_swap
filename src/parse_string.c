@@ -6,7 +6,7 @@
 /*   By: mpeulet <mpeulet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 22:22:16 by mpeulet           #+#    #+#             */
-/*   Updated: 2023/08/10 15:41:59 by mpeulet          ###   ########.fr       */
+/*   Updated: 2023/08/26 14:05:43 by mpeulet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ int	*fill_stack(char **split, int size, int *stack)
 {
 	while (size >= 0)
 	{
-		if (ft_int_over_maxmin(ft_atol(split[size])))
+		if (ft_int_over_maxmin(atol_ps(split[size])))
 		{
 			ft_putendl_fd(ERR_MAXMIN, 3);
 			free(stack);
 			return (0);
 		}
-		stack[size] = ft_atol(split[size]);
+		stack[size] = atol_ps(split[size]);
 		size--;
 	}
 	return (stack);
@@ -93,7 +93,7 @@ int	error_management(t_ps *ps, int ac, char **av)
 {
 	if (ac == 1 || (ac == 2 && ft_str_isdigit(av[1]) == 1))
 	{
-		if (ft_int_over_maxmin(ft_atol(av[1])))
+		if (ft_int_over_maxmin(atol_ps(av[1])))
 			return (2);
 		ft_putendl_fd(NO_PARAM, 3);
 		return (0);

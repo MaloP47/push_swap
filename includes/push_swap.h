@@ -6,7 +6,7 @@
 /*   By: mpeulet <mpeulet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 21:31:25 by mpeulet           #+#    #+#             */
-/*   Updated: 2023/08/15 09:45:36 by mpeulet          ###   ########.fr       */
+/*   Updated: 2023/08/26 13:57:14 by mpeulet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,10 @@ typedef struct s_pushswap
 	int		*stack_copy;
 	int		*index;
 }		t_ps;
+
+/* *** atol_ps.c *** */
+
+long	atol_ps(const char *str);
 
 /* *** is_input_correct.c *** */
 

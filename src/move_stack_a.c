@@ -6,7 +6,7 @@
 /*   By: mpeulet <mpeulet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 22:16:45 by mpeulet           #+#    #+#             */
-/*   Updated: 2023/08/10 16:34:44 by mpeulet          ###   ########.fr       */
+/*   Updated: 2023/08/27 13:17:29 by mpeulet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	swap_a(t_ps *ps, int print)
 	if (print)
 	{
 		ft_putendl_stdout(SA);
-		ps->min_a = find_min(ps, ps->stack_a, ps->size_a);
-		ps->max_a = find_max(ps, ps->stack_a, ps->size_a);
+		//ps->min_a = find_min(ps, ps->stack_a, ps->size_a);
+		//ps->max_a = find_max(ps, ps->stack_a, ps->size_a);
 		ps->move++;
 	}
 }
@@ -52,7 +52,6 @@ void	rotate_a(t_ps *ps, int print)
 void	rev_rotate_a(t_ps *ps, int print)
 {
 	rev_rotate_move(ps->stack_a, ps->size_a);
-	ps->min_a = find_min(ps, ps->stack_a, ps->size_a);
 	if (print)
 	{
 		ft_putendl_stdout(RRA);

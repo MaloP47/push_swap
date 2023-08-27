@@ -6,7 +6,7 @@
 /*   By: mpeulet <mpeulet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 22:17:29 by mpeulet           #+#    #+#             */
-/*   Updated: 2023/08/10 16:34:07 by mpeulet          ###   ########.fr       */
+/*   Updated: 2023/08/27 12:37:46 by mpeulet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ void	swap_b(t_ps *ps, int print)
 	if (print)
 	{
 		ft_putendl_stdout(SB);
-		ps->min_a = find_min(ps, ps->stack_a, ps->size_a);
-		ps->max_a = find_max(ps, ps->stack_a, ps->size_a);
 		ps->move++;
 	}
 }
@@ -31,8 +29,6 @@ void	push_b(t_ps *ps)
 	if (push_move(&ps->stack_a, &ps->stack_b, &ps->size_a, &ps->size_b))
 	{
 		ft_putendl_stdout(PB);
-		ps->min_a = find_min(ps, ps->stack_a, ps->size_a);
-		ps->max_a = find_max(ps, ps->stack_a, ps->size_a);
 		ps->move++;
 	}
 }

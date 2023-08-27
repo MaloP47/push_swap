@@ -6,7 +6,7 @@
 #    By: mpeulet <mpeulet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/20 15:19:55 by mpeulet           #+#    #+#              #
-#    Updated: 2023/08/26 21:48:19 by mpeulet          ###   ########.fr        #
+#    Updated: 2023/08/27 14:15:39 by mpeulet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,7 +55,8 @@ INCLUDE			= 	-I ./includes/\
 OBJ_DIR_P 		= obj/
 SRC_DIR_P		= src/
 SRC_FUNCTIONS_P	= is_input_correct movements move_stack_a move_stack_b \
-					move_both_stacks parse_string radix_sort sort utils
+					move_both_stacks parse_string radix_sort sort super_sort \
+					utils
 
 PUSH_SRC		= $(addprefix $(SRC_DIR_P), $(addsuffix .c, $(SRC_FUNCTIONS_P)))
 PUSH_OBJ		= $(addprefix $(OBJ_DIR_P), $(addsuffix .o, $(SRC_FUNCTIONS_P)))
@@ -120,6 +121,12 @@ test4:		$(LIBFT) $(NAME)
 
 test5:		$(LIBFT) $(NAME)	
 					$(eval ARG = $(shell shuf -i 1-5 -n 5))
+					@echo $(ARG)
+					@$(VCF) ./push_swap $(ARG) $(ERR) $(MESS)
+					@ ./push_swap $(ARG) | ./checker_linux $(ARG)
+
+test10:		$(LIBFT) $(NAME)	
+					$(eval ARG = $(shell shuf -i 1-10 -n 10))
 					@echo $(ARG)
 					@$(VCF) ./push_swap $(ARG) $(ERR) $(MESS)
 					@ ./push_swap $(ARG) | ./checker_linux $(ARG)

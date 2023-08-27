@@ -6,7 +6,7 @@
 /*   By: mpeulet <mpeulet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 21:31:25 by mpeulet           #+#    #+#             */
-/*   Updated: 2023/08/26 21:48:34 by mpeulet          ###   ########.fr       */
+/*   Updated: 2023/08/27 11:12:28 by mpeulet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,16 @@ void	radix_sort(t_ps *ps);
 void	sort_simple(t_ps *ps);
 void	another_simple(t_ps *ps);
 int		main_sort(t_ps *ps);
+
+/* *** super_sort.c *** */
+
+int		ft_sup(t_ps *ps, int index);
+int		cost(int size, int index);
+int		total_cost(int cost_a, int cost_b);
+void	move_best_option(t_ps *ps, int cost_a, int cost_b);
+void	cost_efficency(t_ps *ps);
+void	order_stack_a(t_ps *ps);
+void	super_sort(t_ps *ps);
 
 /* *** utils.c *** */
 

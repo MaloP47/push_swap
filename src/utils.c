@@ -6,7 +6,7 @@
 /*   By: mpeulet <mpeulet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 11:31:15 by mpeulet           #+#    #+#             */
-/*   Updated: 2023/08/27 11:18:34 by mpeulet          ###   ########.fr       */
+/*   Updated: 2023/08/27 23:40:24 by mpeulet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,6 @@ void	close_program(t_ps *push_swap)
 		free(push_swap->stack_b);
 		push_swap->stack_b = 0;
 	}
-	/*if (push_swap->stack_copy)
-	{
-		free(push_swap->stack_copy);
-		push_swap->stack_copy = 0;
-	}*/
 	exit(EXIT_SUCCESS);
 }
 

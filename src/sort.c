@@ -6,7 +6,7 @@
 /*   By: mpeulet <mpeulet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 11:52:13 by mpeulet           #+#    #+#             */
-/*   Updated: 2023/08/27 11:10:57 by mpeulet          ###   ########.fr       */
+/*   Updated: 2023/08/27 23:40:52 by mpeulet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,6 @@ int	main_sort(t_ps *ps)
 	else if (ps->final_size == 4 || ps->final_size == 5)
 		another_simple(ps);
 	else
-	{
 		super_sort(ps);
-		/*copy_stack(ps);
-		radix_sort(ps);*/
-	}
 	return (1);
 }

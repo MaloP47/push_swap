@@ -6,7 +6,7 @@
 /*   By: mpeulet <mpeulet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 21:31:25 by mpeulet           #+#    #+#             */
-/*   Updated: 2023/08/27 11:12:28 by mpeulet          ###   ########.fr       */
+/*   Updated: 2023/08/27 23:37:56 by mpeulet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ typedef struct s_pushswap
 	int		size_b;
 	int		min_a;
 	int		max_a;
+	int		cost_a;
+	int		cost_b;
 	int		index_min;
 	int		index_max;
 	int		move;
@@ -93,14 +95,20 @@ void	sort_simple(t_ps *ps);
 void	another_simple(t_ps *ps);
 int		main_sort(t_ps *ps);
 
-/* *** super_sort.c *** */
+/* *** super_sort_utilc.c *** */
 
 int		ft_sup(t_ps *ps, int index);
+void	define_when_revrotate(t_ps *ps, int cost_a, int cost_b);
+void	define_when_rev(t_ps *ps, int cost_a, int cost_b);
+void	move_best_option(t_ps *ps, int cost_a, int cost_b);
+void	order_stack_a(t_ps *ps);
+
+/* *** super_sort.c *** */
+
 int		cost(int size, int index);
 int		total_cost(int cost_a, int cost_b);
-void	move_best_option(t_ps *ps, int cost_a, int cost_b);
-void	cost_efficency(t_ps *ps);
-void	order_stack_a(t_ps *ps);
+void	efficiency_loop(t_ps *ps, int i, int max);
+void	cost_efficiency(t_ps *ps);
 void	super_sort(t_ps *ps);
 
 /* *** utils.c *** */

@@ -6,13 +6,13 @@
 /*   By: mpeulet <mpeulet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 22:40:00 by mpeulet           #+#    #+#             */
-/*   Updated: 2023/08/27 23:28:51 by mpeulet          ###   ########.fr       */
+/*   Updated: 2023/08/28 18:40:10 by mpeulet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_sup(t_ps *ps, int index)
+int	index_minormax(t_ps *ps, int index)
 {
 	int	i;
 
@@ -34,7 +34,7 @@ void	define_when_revrotate(t_ps *ps, int cost_a, int cost_b)
 	{
 		if (cost_a > 0)
 		{
-			rev_rotate_both(ps);
+			rev_rotate_both(ps, 1);
 			cost_a--;
 		}
 		else
@@ -54,7 +54,7 @@ void	define_when_rev(t_ps *ps, int cost_a, int cost_b)
 	{
 		if (cost_a < 0)
 		{
-			rotate_both(ps);
+			rotate_both(ps, 1);
 			cost_a++;
 		}
 		else
@@ -72,7 +72,7 @@ void	move_best_option(t_ps *ps, int cost_a, int cost_b)
 {
 	define_when_revrotate(ps, cost_a, cost_b);
 	define_when_rev(ps, cost_a, cost_b);
-	push_a(ps);
+	push_a(ps, 1);
 }
 
 void	order_stack_a(t_ps *ps)

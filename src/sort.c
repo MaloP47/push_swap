@@ -6,7 +6,7 @@
 /*   By: mpeulet <mpeulet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 11:52:13 by mpeulet           #+#    #+#             */
-/*   Updated: 2023/08/27 23:40:52 by mpeulet          ###   ########.fr       */
+/*   Updated: 2023/08/28 18:18:50 by mpeulet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,13 @@ void	another_simple(t_ps *ps)
 			else
 				rotate_a(ps, 1);
 		}
-		push_b(ps);
+		push_b(ps, 1);
 		size_a--;
 	}
 	sort_simple(ps);
-	push_a(ps);
+	push_a(ps, 1);
 	if (ps->final_size == 5)
-		push_a(ps);
+		push_a(ps, 1);
 }
 
 int	main_sort(t_ps *ps)

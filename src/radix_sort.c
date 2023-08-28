@@ -6,7 +6,7 @@
 /*   By: mpeulet <mpeulet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 11:32:34 by mpeulet           #+#    #+#             */
-/*   Updated: 2023/08/26 21:59:23 by mpeulet          ###   ########.fr       */
+/*   Updated: 2023/08/28 18:18:03 by mpeulet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,11 +105,11 @@ void	radix_sort(t_ps *ps)
 			if (((ps->stack_a[0] >> i) & 1) == 1)
 				rotate_a(ps, 1);
 			else
-				push_b(ps);
+				push_b(ps, 1);
 			j++;
 		}
 		while (ps->size_b != 0)
-			push_a(ps);
+			push_a(ps, 1);
 		i++;
 	}
 	return ;

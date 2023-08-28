@@ -6,7 +6,7 @@
 /*   By: mpeulet <mpeulet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 22:01:06 by mpeulet           #+#    #+#             */
-/*   Updated: 2023/08/27 23:38:07 by mpeulet          ###   ########.fr       */
+/*   Updated: 2023/08/28 18:40:11 by mpeulet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	efficiency_loop(t_ps *ps, int i, int max)
 		while (++i < ps->size_b)
 		{
 			tmp_a = cost(ps->size_b, i);
-			tmp_b = cost(ps->size_a, ft_sup(ps, i));
+			tmp_b = cost(ps->size_a, index_minormax(ps, i));
 			ps->stack_copy[i] = total_cost(tmp_a, tmp_b);
 			if (max > ps->stack_copy[i])
 			{
@@ -82,7 +82,7 @@ void	cost_efficiency(t_ps *ps)
 void	super_sort(t_ps *ps)
 {
 	while (ps->size_a != 3)
-		push_b(ps);
+		push_b(ps, 1);
 	sort_simple(ps);
 	cost_efficiency(ps);
 	order_stack_a(ps);

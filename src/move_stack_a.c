@@ -6,7 +6,7 @@
 /*   By: mpeulet <mpeulet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 22:16:45 by mpeulet           #+#    #+#             */
-/*   Updated: 2023/08/27 23:39:59 by mpeulet          ###   ########.fr       */
+/*   Updated: 2023/08/28 18:17:16 by mpeulet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,12 @@ void	swap_a(t_ps *ps, int print)
 	}
 }
 
-void	push_a(t_ps *ps)
+void	push_a(t_ps *ps, int print)
 {
 	if (push_move(&ps->stack_b, &ps->stack_a, &ps->size_b, &ps->size_a))
 	{
-		ft_putendl_stdout(PA);
+		if (print)
+			ft_putendl_stdout(PA);
 		ps->min_a = find_min(ps, ps->stack_a, ps->size_a);
 		ps->max_a = find_max(ps, ps->stack_a, ps->size_a);
 		ps->move++;

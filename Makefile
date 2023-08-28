@@ -6,7 +6,7 @@
 #    By: mpeulet <mpeulet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/20 15:19:55 by mpeulet           #+#    #+#              #
-#    Updated: 2023/08/28 14:31:36 by mpeulet          ###   ########.fr        #
+#    Updated: 2023/08/28 21:55:24 by mpeulet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -106,45 +106,59 @@ test2:		$(LIBFT) $(NAME)
 					@echo $(ARG)
 					$(VCF) ./push_swap $(ARG) $(ERR) $(MESS)
 					@ ./push_swap $(ARG) | ./checker_linux $(ARG)
+					@echo -n "Instructions: "
+					@./push_swap $(ARG) | wc -l
 
 test3:		$(LIBFT) $(NAME)	
 					$(eval ARG = $(shell shuf -i 1-3 -n 3))
 					@echo $(ARG)
 					$(VCF) ./push_swap $(ARG) $(ERR) $(MESS)
 					@ ./push_swap $(ARG) | ./checker_linux $(ARG)
+					@echo -n "Instructions: "
+					@./push_swap $(ARG) | wc -l
 
 test4:		$(LIBFT) $(NAME)	
 					$(eval ARG = $(shell shuf -i 1-4 -n 4))
 					@echo $(ARG)
 					@$(VCF) ./push_swap $(ARG) $(ERR) $(MESS)
 					@ ./push_swap $(ARG) | ./checker_linux $(ARG)
+					@echo -n "Instructions: "
+					@./push_swap $(ARG) | wc -l
 
 test5:		$(LIBFT) $(NAME)	
 					$(eval ARG = $(shell shuf -i 1-5 -n 5))
 					@echo $(ARG)
 					@$(VCF) ./push_swap $(ARG) $(ERR) $(MESS)
 					@ ./push_swap $(ARG) | ./checker_linux $(ARG)
+					@echo -n "Instructions: "
+					@./push_swap $(ARG) | wc -l
 
 test10:		$(LIBFT) $(NAME)	
 					$(eval ARG = $(shell shuf -i 1-10 -n 10))
 					@echo $(ARG)
 					@$(VCF) ./push_swap $(ARG) $(ERR) $(MESS)
 					@ ./push_swap $(ARG) | ./checker_linux $(ARG)
+					@echo -n "Instructions: "
+					@./push_swap $(ARG) | wc -l
 
 test100:	$(LIBFT) $(NAME)	
 					$(eval ARG = $(shell shuf -i 1-100 -n 100))
 					@$(VCF) ./push_swap $(ARG) $(ERR) $(MESS)
 					@ ./push_swap $(ARG) | ./checker_linux $(ARG)
 					@echo $(ARG)
+					@echo -n "Instructions: "
+					@./push_swap $(ARG) | wc -l
 
 test500:	$(LIBFT) $(NAME)	
 					$(eval ARG = $(shell shuf -i 1-500 -n 500))
 					@$(VCF) ./push_swap $(ARG) $(ERR) $(MESS)
 					@ ./push_swap $(ARG) | ./checker_linux $(ARG)
 					@echo $(ARG)
+					@echo -n "Instructions: "
+					@./push_swap $(ARG) | wc -l
 
 norm:
 					@norminette $(SRC_DIR_P) $(NORM) $(LIBFT_DIR) | grep -v Norme -B1 || true
 					@echo "Norminet the cat says : $(RED)M$(ORANGE)e$(YELLOW)o$(GREEN)w$(CYAN) !$(BLUE)!$(MAGENTA)!$(DEF_COLOR)"
 
-.PHONY: all re clean fclean norm bonus test2 test3 test4 test5 test10 test100 test500
+.PHONY: all bonus clean fclean re test2 test3 test4 test5 test10 test100 test500 norm

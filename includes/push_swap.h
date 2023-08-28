@@ -6,7 +6,7 @@
 /*   By: mpeulet <mpeulet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 21:31:25 by mpeulet           #+#    #+#             */
-/*   Updated: 2023/08/27 23:37:56 by mpeulet          ###   ########.fr       */
+/*   Updated: 2023/08/28 18:40:12 by mpeulet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,22 +56,22 @@ void	rev_rotate_move(int *stack, int size);
 /* *** move_stack_a.c *** */
 
 void	swap_a(t_ps *push_swap, int print);
-void	push_a(t_ps *push_swap);
+void	push_a(t_ps *push_swap, int print);
 void	rotate_a(t_ps *push_swap, int print);
 void	rev_rotate_a(t_ps *push_swap, int print);
 
 /* *** move_stack_b.c *** */
 
 void	swap_b(t_ps *push_swap, int print);
-void	push_b(t_ps *push_swap);
+void	push_b(t_ps *push_swap, int print);
 void	rotate_b(t_ps *push_swap, int print);
 void	rev_rotate_b(t_ps *push_swap, int print);
 
 /* *** move_both_stacks.c *** */
 
-void	swap_both(t_ps *push_swap);
-void	rotate_both(t_ps *push_swap);
-void	rev_rotate_both(t_ps *push_swap);
+void	swap_both(t_ps *push_swap, int print);
+void	rotate_both(t_ps *push_swap, int print);
+void	rev_rotate_both(t_ps *push_swap, int print);
 
 /* *** parse_string.c *** */
 
@@ -97,7 +97,7 @@ int		main_sort(t_ps *ps);
 
 /* *** super_sort_utilc.c *** */
 
-int		ft_sup(t_ps *ps, int index);
+int		index_minormax(t_ps *ps, int index);
 void	define_when_revrotate(t_ps *ps, int cost_a, int cost_b);
 void	define_when_rev(t_ps *ps, int cost_a, int cost_b);
 void	move_best_option(t_ps *ps, int cost_a, int cost_b);

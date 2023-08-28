@@ -6,7 +6,7 @@
 #    By: mpeulet <mpeulet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/20 15:19:55 by mpeulet           #+#    #+#              #
-#    Updated: 2023/08/27 23:06:19 by mpeulet          ###   ########.fr        #
+#    Updated: 2023/08/28 14:31:36 by mpeulet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ LIBFT			= $(LIBFT_DIR)$(LIBFT_NAME)
 BONUS			= checker
 NAME			= push_swap
 CC				= cc
-FLAGS			= -Wall -Werror -Wextra
+FLAGS			= -Wall -Werror -Wextra -g3
 RM				= rm -rf
 TXT				= *txt
 VCF				= valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes
@@ -63,7 +63,7 @@ PUSH_OBJ		= $(addprefix $(OBJ_DIR_P), $(addsuffix .o, $(SRC_FUNCTIONS_P)))
 
 IFMAKE_DIR_P	= .cache_exists
 
-all:			$(LIBFT) $(NAME)
+all:			$(NAME)
 
 $(IFMAKE_DIR_P):
 					@mkdir -p $(OBJ_DIR_P)
@@ -76,15 +76,15 @@ $(OBJ_DIR_P)%.o: $(SRC_DIR_P)%.c | $(IFMAKE_DIR_P)
 					@echo "$(ORANGE)Loading... $< $(DEF_COLOR)"
 					@$(CC) $(FLAGS) $(INCLUDE) -c $< -o $@
 
-$(NAME): $(PUSH_OBJ)
+$(NAME): 		$(LIBFT) $(PUSH_OBJ)
 					@echo "$(GREY)Compiling push_swap...$(DEF_COLOR)"
 					@$(CC) $(FLAGS) -o $(NAME) src/main.c $(PUSH_OBJ) $(LIBFT) $(INCLUDE)
 					@echo "$(GREEN)Push_swap ready.$(DEF_COLOR)"
 
 bonus:			$(LIBFT) $(BONUS)
 
-$(BONUS): $(PUSH_OBJ)
-					@$(CC) $(FLAGS) -o $(BONUS) src/checker.c $(PUSH_OBJ) $(LIBFT) $(INCLUDE)
+$(BONUS): 		$(PUSH_OBJ) $(LIBFT)
+					@$(CC) $(FLAGS) -o $(BONUS) src/checker_bonus.c $(PUSH_OBJ) $(LIBFT) $(INCLUDE)
 					@echo "$(GREEN)Checker ready.$(DEF_COLOR)"
 
 clean:
@@ -93,7 +93,7 @@ clean:
 					@make -s clean -C $(LIBFT_DIR)
 					
 fclean:			clean
-					@echo "$(RED)push_swap removed.$(DEF_COLOR)"
+					@echo  "$(RED)push_swap removed.$(DEF_COLOR)"
 					@$(RM) $(NAME) $(BONUS)
 					@$(RM) $(LIBFT_DIR)$(LIBFT_NAME)
 					@$(RM) $(TXT)
@@ -147,4 +147,4 @@ norm:
 					@norminette $(SRC_DIR_P) $(NORM) $(LIBFT_DIR) | grep -v Norme -B1 || true
 					@echo "Norminet the cat says : $(RED)M$(ORANGE)e$(YELLOW)o$(GREEN)w$(CYAN) !$(BLUE)!$(MAGENTA)!$(DEF_COLOR)"
 
-.PHONY: all re clean fclean norm bonus test2 test3 test4 test5
+.PHONY: all re clean fclean norm bonus test2 test3 test4 test5 test10 test100 test500

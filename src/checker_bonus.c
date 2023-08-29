@@ -6,7 +6,7 @@
 /*   By: mpeulet <mpeulet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/06 20:24:46 by mpeulet           #+#    #+#             */
-/*   Updated: 2023/08/28 21:36:17 by mpeulet          ###   ########.fr       */
+/*   Updated: 2023/08/29 15:08:39 by mpeulet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void	exec_instructions2(t_ps *ps, char *s)
 	{
 		ft_putendl_stdout("Error");
 		free(s);
+		gnl(0, 1);
 		close_program(ps);
 	}
 }
@@ -65,13 +66,14 @@ void	get_intructions(t_ps *ps)
 	line = 0;
 	while (1)
 	{
-		line = get_next_line_bonus(STDIN_FILENO);
+		line = gnl(STDIN_FILENO, 0);
 		if (!line)
 			break ;
 		exec_instructions1(ps, line);
 		exec_instructions2(ps, line);
 		free(line);
 	}
+	gnl(0, 1);
 	if (is_stack_sorted(ps->stack_a, ps->size_a) && ps->size_b == 0)
 		ft_putendl_stdout("OK");
 	else
@@ -84,6 +86,8 @@ int	main(int ac, char **av)
 	int		error_type;
 	t_ps	ps;
 
+	if (ac == 1)
+		return (EXIT_SUCCESS);
 	ft_memset(&ps, 0, sizeof(t_ps));
 	error_type = error_management(&ps, ac, av);
 	if (error_type == 2)
@@ -92,5 +96,5 @@ int	main(int ac, char **av)
 		close_program(&ps);
 	}
 	get_intructions(&ps);
-	return (0);
+	return (EXIT_SUCCESS);
 }

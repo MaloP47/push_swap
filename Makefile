@@ -6,7 +6,7 @@
 #    By: mpeulet <mpeulet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/20 15:19:55 by mpeulet           #+#    #+#              #
-#    Updated: 2023/08/28 21:55:24 by mpeulet          ###   ########.fr        #
+#    Updated: 2023/08/30 10:20:49 by mpeulet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -156,6 +156,9 @@ test500:	$(LIBFT) $(NAME)
 					@echo $(ARG)
 					@echo -n "Instructions: "
 					@./push_swap $(ARG) | wc -l
+
+random:
+					@seq -1000 1000 | shuf -n 100 | tr '\n' ' '; echo
 
 norm:
 					@norminette $(SRC_DIR_P) $(NORM) $(LIBFT_DIR) | grep -v Norme -B1 || true

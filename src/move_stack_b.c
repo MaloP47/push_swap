@@ -6,7 +6,7 @@
 /*   By: mpeulet <mpeulet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 22:17:29 by mpeulet           #+#    #+#             */
-/*   Updated: 2023/08/28 18:17:16 by mpeulet          ###   ########.fr       */
+/*   Updated: 2023/08/30 15:16:32 by mpeulet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ void	push_b(t_ps *ps, int print)
 			ft_putendl_stdout(PB);
 		ps->move++;
 	}
+	ps->min_a = find_min(ps, ps->stack_a, ps->size_a);
+	ps->max_a = find_max(ps, ps->stack_a, ps->size_a);
 }
 
 void	rotate_b(t_ps *push_swap, int print)

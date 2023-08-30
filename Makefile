@@ -6,7 +6,7 @@
 #    By: mpeulet <mpeulet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/20 15:19:55 by mpeulet           #+#    #+#              #
-#    Updated: 2023/08/30 10:20:49 by mpeulet          ###   ########.fr        #
+#    Updated: 2023/08/30 14:44:35 by mpeulet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -111,33 +111,33 @@ test2:		$(LIBFT) $(NAME)
 
 test3:		$(LIBFT) $(NAME)	
 					$(eval ARG = $(shell shuf -i 1-3 -n 3))
-					@echo $(ARG)
 					$(VCF) ./push_swap $(ARG) $(ERR) $(MESS)
 					@ ./push_swap $(ARG) | ./checker_linux $(ARG)
+					@echo $(ARG)
 					@echo -n "Instructions: "
 					@./push_swap $(ARG) | wc -l
 
 test4:		$(LIBFT) $(NAME)	
 					$(eval ARG = $(shell shuf -i 1-4 -n 4))
-					@echo $(ARG)
 					@$(VCF) ./push_swap $(ARG) $(ERR) $(MESS)
 					@ ./push_swap $(ARG) | ./checker_linux $(ARG)
+					@echo $(ARG)
 					@echo -n "Instructions: "
 					@./push_swap $(ARG) | wc -l
 
 test5:		$(LIBFT) $(NAME)	
 					$(eval ARG = $(shell shuf -i 1-5 -n 5))
-					@echo $(ARG)
 					@$(VCF) ./push_swap $(ARG) $(ERR) $(MESS)
 					@ ./push_swap $(ARG) | ./checker_linux $(ARG)
+					@echo $(ARG)
 					@echo -n "Instructions: "
 					@./push_swap $(ARG) | wc -l
 
 test10:		$(LIBFT) $(NAME)	
 					$(eval ARG = $(shell shuf -i 1-10 -n 10))
-					@echo $(ARG)
 					@$(VCF) ./push_swap $(ARG) $(ERR) $(MESS)
 					@ ./push_swap $(ARG) | ./checker_linux $(ARG)
+					@echo $(ARG)
 					@echo -n "Instructions: "
 					@./push_swap $(ARG) | wc -l
 

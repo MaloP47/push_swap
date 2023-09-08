@@ -6,7 +6,7 @@
 #    By: mpeulet <mpeulet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/20 15:19:55 by mpeulet           #+#    #+#              #
-#    Updated: 2023/08/30 14:44:35 by mpeulet          ###   ########.fr        #
+#    Updated: 2023/09/08 13:35:58 by mpeulet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -161,7 +161,7 @@ random:
 					@seq -1000 1000 | shuf -n 100 | tr '\n' ' '; echo
 
 norm:
-					@norminette $(SRC_DIR_P) $(NORM) $(LIBFT_DIR) | grep -v Norme -B1 || true
-					@echo "Norminet the cat says : $(RED)M$(ORANGE)e$(YELLOW)o$(GREEN)w$(CYAN) !$(BLUE)!$(MAGENTA)!$(DEF_COLOR)"
+					@norminette $(SRC_DIR_P) $(NORM) | grep -A1 -B1 Error | grep -v 'OK!' || true
+					@echo "$(RED)Norminet $(ORANGE)the $(YELLOW)cat $(GREEN)says$(CYAN): $(RED)M$(ORANGE)e$(YELLOW)o$(GREEN)w$(CYAN) !$(BLUE)!$(MAGENTA)!$(DEF_COLOR)"
 
 .PHONY: all bonus clean fclean re test2 test3 test4 test5 test10 test100 test500 norm
